@@ -25,7 +25,7 @@ const Quiz = ({ name, questions, score, setScore, setQuestions }) => {
 
   return (
     <div className="quiz">
-      <span className="subtitle">Welcome, {name}</span>
+      <span className="subtitle">Seja Bem Vindo, {name}</span>
 
       {questions ? (
         <>

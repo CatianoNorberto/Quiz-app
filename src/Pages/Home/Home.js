@@ -1,8 +1,12 @@
 import { Button, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import Lottie from "lottie-react";
+
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Categories from "../../Data/Categories";
+import QuizImage from "../../assets/images/quizImg.json"
+
 import "./Home.css";
 
 const Home = ({ name, setName, fetchQuestions }) => {
@@ -26,18 +30,17 @@ const Home = ({ name, setName, fetchQuestions }) => {
   return (
     <div className="content">
       <div className="settings">
-        <span style={{ fontSize: 30 }}>Quiz Settings</span>
         <div className="settings__select">
           {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>}
           <TextField
             style={{ marginBottom: 25 }}
-            label="Enter Your Name"
+            label="Digite seu nome"
             variant="outlined"
             onChange={(e) => setName(e.target.value)}
           />
           <TextField
             select
-            label="Select Category"
+            label="Seleciona a categoria"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             variant="outlined"
@@ -51,20 +54,20 @@ const Home = ({ name, setName, fetchQuestions }) => {
           </TextField>
           <TextField
             select
-            label="Select Difficulty"
+            label="Seleciona a dificuldade"
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
             variant="outlined"
             style={{ marginBottom: 30 }}
           >
             <MenuItem key="Easy" value="easy">
-              Easy
+              Fácil
             </MenuItem>
             <MenuItem key="Medium" value="medium">
-              Medium
+              Médio
             </MenuItem>
             <MenuItem key="Hard" value="hard">
-              Hard
+              Difícil
             </MenuItem>
           </TextField>
           <Button
@@ -73,11 +76,12 @@ const Home = ({ name, setName, fetchQuestions }) => {
             size="large"
             onClick={handleSubmit}
           >
-            Start Quiz
+            Vamos Começar
           </Button>
         </div>
       </div>
-      <img src="/quiz.svg" className="banner" alt="quiz app" />
+      {/* <img src="/quiz.svg" className="banner" alt="quiz app" /> */}
+      <Lottie animationData={QuizImage} className="banner"/>
     </div>
   );
 };

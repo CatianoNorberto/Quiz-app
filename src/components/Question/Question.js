@@ -47,7 +47,7 @@ const Question = ({
 
   return (
     <div className="question">
-      <h1>Question {currQues + 1} :</h1>
+      <h1>Pergunta {currQues + 1} :</h1>
 
       <div className="singleQuestion">
         <h2>{questions[currQues].question}</h2>
@@ -74,7 +74,7 @@ const Question = ({
             href="/"
             onClick={() => handleQuit()}
           >
-            Quit
+            Sair
           </Button>
           <Button
             variant="contained"
@@ -83,7 +83,7 @@ const Question = ({
             style={{ width: 185 }}
             onClick={handleNext}
           >
-            {currQues > 20 ? "Submit" : "Next Question"}
+            {currQues > 20 ? "Submit" : "Próxima"}
           </Button>
         </div>
       </div>
